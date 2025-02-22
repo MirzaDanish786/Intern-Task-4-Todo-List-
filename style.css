@@ -6,9 +6,110 @@
 }
 body{
     font-family: "Poppins", serif;
-    background-color:  #ffb3e8;
-    /* overflow: hidden; */
+    background-color: #060064;
+    overflow: hidden;
 }
+/* Styling of the background */
+.circleTopContainer{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.circleTopContainer_circle1{
+    width: 70%;
+    height: 70%;
+    background-color: #6c6c6c54;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: circleTopContainer_circle1_Animation 4s ease-in-out infinite alternate-reverse;
+    
+}
+.circleTopContainer_circle2{
+    width: 20%;
+    height: 20%;
+    background-color: #6c6c6c54;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: circleTopContainer_circle2_Animation 4s ease-in-out infinite alternate-reverse;
+}
+@keyframes circleTopContainer_circle1_Animation {
+    from{
+        top: 0;
+        left: 0;
+    }
+    to{
+        top: 50px;
+        left: 50px;
+    }
+}
+@keyframes circleTopContainer_circle2_Animation {
+    from{
+        bottom: 0;
+        right: 0;
+    }
+    to{
+        bottom: 20px;
+        right: 20px;
+    }
+}
+.circleEndContainer{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.circleEndContainer_circle1{
+    width: 70%;
+    height: 70%;
+    background-color: #6c6c6c54;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: circleEndContainer_circle1_Animation 4s ease-in-out infinite alternate-reverse;
+
+}
+.circleEndContainer_circle2{
+    width: 20%;
+    height: 20%;
+    background-color: #6c6c6c54;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: circleEndContainer_circle2_Animation 4s ease-in-out infinite alternate-reverse;
+}
+@keyframes circleEndContainer_circle1_Animation {
+    from{
+        bottom: 0;
+        right: 0;
+    }
+    to{
+        bottom: 50px;
+        right: 50px;
+    }
+}
+@keyframes circleEndContainer_circle2_Animation {
+    from{
+        top: 0;
+        left: 0;
+    }
+    to{
+        top: 20px;
+        left: 20px;
+    }
+}
+
+
+
+
 .todoContainer{
     width: 60%;
     margin:auto;
@@ -17,8 +118,8 @@ body{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background-color: #ffcea4;
-    border-radius: 40px;    
+    background-color: #130078;
+    border-radius: 20px;    
     box-shadow: 0px 0px 20px black;
 }
 .headingContainer{
@@ -36,8 +137,8 @@ body{
 }
 .heading{
     font-size: 40px;
-    font-weight: 800;
-    color: rebeccapurple;
+    font-weight: 600;
+    color: wheat;
 }
 /* Center */
 .center{
@@ -58,7 +159,7 @@ body{
     padding: 2px 50px;
     font-size: 20px;
     border: none;
-    outline: 2px solid rebeccapurple;
+    outline: 2px solid  #060064;
     background-color: wheat;
 }
 .editImage{
@@ -76,14 +177,14 @@ body{
     font-size: 20px;
     font-weight: 600;
     border-radius: 30px;
-    background-color: rebeccapurple;
+    background-color: #060064;
     color: white;
     border: none;
     cursor: pointer;
 }
 .addBtn button:hover{
     background-color: white;
-    color: rebeccapurple;
+    color: #130078;
     transform: scale(1.2);
     transition: all .3s ;
 }
@@ -92,26 +193,27 @@ body{
     width: 12px;
 }
 .listContainer::-webkit-scrollbar-track{
-    background-color:  #ff71d4;
+    background-color: #060064;
     border-radius: 20px;
 
     height: 200px;
 }
 .listContainer::-webkit-scrollbar-thumb{
-    background-color: #ff00b3;
+    background-color: #130078;
     border-radius: 20px;
-    border: 3px solid #b6007f;
+    border: 3px solid wheat;
 }
 .listContainer{
     width: 60%;
     margin:50px auto;
-    background-color: #ffcea4;
-    border-radius: 40px;    
+    background-color: #130078;
+    border-radius: 20px;    
     box-shadow: 0px 0px 20px black;
     padding: 20px;
     max-height: 300px;
     overflow-y: auto;
     overflow-x: hidden;
+    color: white;
 }
 .listContainer_upper{
     display: flex;
@@ -222,12 +324,25 @@ body{
     border-radius: 8px;
     background-color: #f1d900;
 }
+.saveBtn:hover{
+    background-color:#bba800;
+    transform: scale(1.1);
+    transition: all .5s;
+    cursor: pointer;
+}
 /* editInput */
 #editInput{
     height: 100%;
     width: 100%;
     font-size: 20px;
+    color: white;
+    border: none;
+    outline: none;
     background-color: transparent;
+}
+::selection{
+    background-color: white;
+    color: black    ;
 }
 
 /* Check Button */
