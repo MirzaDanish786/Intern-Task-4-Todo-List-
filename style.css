@@ -7,9 +7,10 @@
 body{
     font-family: "Poppins", serif;
     background-color:  #ffb3e8;
+    /* overflow: hidden; */
 }
 .todoContainer{
-    width: 70%;
+    width: 60%;
     margin:auto;
     margin-top: 80px;
     padding: 20px;
@@ -83,22 +84,117 @@ body{
 .addBtn button:hover{
     background-color: white;
     color: rebeccapurple;
-    transition: all .3s;
+    transform: scale(1.2);
+    transition: all .3s ;
 }
 /* List Contaienr */
+.listContainer::-webkit-scrollbar{
+    width: 12px;
+}
+.listContainer::-webkit-scrollbar-track{
+    background-color:  #ff71d4;
+    border-radius: 20px;
+
+    height: 200px;
+}
+.listContainer::-webkit-scrollbar-thumb{
+    background-color: #ff00b3;
+    border-radius: 20px;
+    border: 3px solid #b6007f;
+}
 .listContainer{
-    width: 70%;
+    width: 60%;
     margin:50px auto;
     background-color: #ffcea4;
     border-radius: 40px;    
     box-shadow: 0px 0px 20px black;
     padding: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.listContainer_upper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.deleteAllBox{
+    display: flex;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.deleteAllBox:hover{
+    color: red;
+    transition: all .3s;
+}
+.deleteAllBox:hover .deleteAllIcon{
+    transform: scale(1.2);
+    transition: all .3s;
+}
+@keyframes deleteAll {
+    0%{
+        transform: rotate(0deg);
+
+    }
+    10%{
+        transform: rotate(20deg);
+    }
+    20%{
+        transform: rotate(-20deg);
+    }
+    30%{
+        transform: rotate(20deg);
+    }
+    40%{
+        transform: rotate(-20deg);
+    }
+    50%{
+        transform: rotate(20deg);
+    }
+    60%{
+        transform: rotate(-20deg);
+    }
+    70%{
+        transform: rotate(20deg);
+    }
+    80%{
+        transform: rotate(-20deg);
+    }
+    90%{
+        transform: rotate(20deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+
+}
+.deleteAllIcon{
+    width: 30px;
+}
+.deleteAllIcon img{
+    width: 100%;
+    object-fit: contain;
+    justify-content: center;
+    align-items: end;
 }
 
 .defaultTextContainer{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all .3s;
+   
+}
+@keyframes alert {
+    from{
+        transform: scale(1);
+        color: black;
+    }
+    to{
+        transform: scale(1.2);
+        color: red;
+    }
 }
 .items{
     padding: 5px 20px;
@@ -117,6 +213,23 @@ body{
     gap: 10px;
     height: fit-content;
 }
+/* Save Button: */
+.saveBtn{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 15px;
+    border-radius: 8px;
+    background-color: #f1d900;
+}
+/* editInput */
+#editInput{
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    background-color: transparent;
+}
+
 /* Check Button */
 .checkBtn{
     display: flex;
@@ -126,6 +239,13 @@ body{
     border-radius: 8px;
     background-color: #0dd300;
 }
+.checkBtn:hover{
+    background-color: #098500;
+    transform: scale(1.1);
+    transition: all .5s;
+    cursor: pointer;
+
+}
 /* Edit Button */
 .editBtn{
     display: flex;
@@ -133,7 +253,14 @@ body{
     align-items: center;
     padding: 6px 15px;
     border-radius: 8px;
-    background-color: #007eff;;
+    background-color: #007eff;
+}
+.editBtn:hover{
+    transform: scale(1.1);
+    background-color: #00468b;
+    transition: all .5s;
+    cursor: pointer;
+
 }
 /* Delete Button */
 .deleteBtn{
@@ -143,5 +270,76 @@ body{
     padding: 6px 15px;
     border-radius: 8px;
     background-color: #ff3838;
+}
+.deleteBtn:hover{
+    background-color: #a50000;
+    transform: scale(1.1);
+    transition: all .5s;
+    cursor: pointer;
 
+}
+/* Media Queries */
+@media (max-width: 1024px){
+    .todoContainer{
+        width: 80%;
+    }
+    .listContainer{
+        width: 80%;
+    }
+}
+@media (max-width: 768px){
+    .todoContainer{
+        width: 90%;
+    }
+    .listContainer{
+        width: 90%;
+    }
+}
+@media (max-width: 650px){
+    .todoContainer{
+        padding: 10px;
+        border-radius: 20px;
+    }
+    .addBtn button{
+        padding: 16px 30px;
+    }
+    .inputField input{
+        padding-right: 20px;
+    }
+
+    .inputField{
+        width: 70%;
+    }
+    .center{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 550px){
+    .heading{
+        font-size: 30px;
+    }
+    .deleteAllBox {
+        font-size: 16px;
+    }
+}
+@media (max-width: 480px){
+    .center{
+        flex-direction: column;
+    }
+    .inputField{
+        width: 90%;
+    }
+    .listContainer_upper{
+        flex-direction: column;
+    }
+    .heading:nth-child(1){
+        align-self: flex-start;
+    }
+    .deleteAllBox{
+        align-self: flex-end;
+    }
+    .checkBtn, .deleteBtn, .editBtn{
+        padding: 4px 10px;
+    }
 }
